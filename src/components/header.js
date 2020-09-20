@@ -18,6 +18,7 @@ const Header = ({ score, questions }) => (
       fontFamily:
         "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif",
       background: "#fff",
+      zIndex: 2,
     }}
   >
     <p style={{ margin: 0, flex: 1 }}>MCQ EXAM: CHECK YOURSELF</p>
