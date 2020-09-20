@@ -2,33 +2,30 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
+const Header = ({ score, questions }) => (
+  <div
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      display: "flex",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      borderBottom: "1px solid",
+      color: "#9a9ad8",
+      paddingBbottom: 2,
+      fontFamily:
+        "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif",
+      background: "#fff",
     }}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+    <p style={{ margin: 0, flex: 1 }}>MCQ EXAM: CHECK YOURSELF</p>
+    <p style={{ margin: 0, padding: "0 5px", color: "cadetblue" }}>
+      QUESTIONS: {questions["current"]}/{questions["total"]}
+    </p>
+    <p style={{ margin: 0, padding: "0 5px", color: "#71424b" }}>
+      {"SCORE: " + score["current"] + "/" + score["total"]}
+    </p>
+  </div>
 )
 
 Header.propTypes = {

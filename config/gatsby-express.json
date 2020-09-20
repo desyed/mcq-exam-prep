@@ -1,0 +1,20 @@
+{
+  "redirects": [],
+  "pages": [
+    {
+      "path": "/404/"
+    },
+    {
+      "path": "/exam/"
+    },
+    {
+      "path": "/"
+    },
+    {
+      "path": "/using-typescript/"
+    },
+    {
+      "path": "/404.html"
+    }
+  ]
+}
