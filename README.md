@@ -4,6 +4,8 @@
 
 1.  **EXTRACT IMAGES**
 
+    Copy/paste images in "src/images/exam" folder
+
     ```shell
     FOR QUESTION IMAGE NAME EXAMPLE: q1.png,q2.png etc
     FOR ANSWER IMAGE NAME EXAMPLE: a1.png,a2.png etc

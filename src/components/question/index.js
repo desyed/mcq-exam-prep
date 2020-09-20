@@ -7,7 +7,7 @@ const Question = ({ info }) => {
   const [show, makeShow] = useState(false)
   return (
     <div className="question_con">
-      <div className="title">Question: {info.id}</div>
+      <div className="title">Question: {info.qid}</div>
       <div className="question">
         <Image alt="question" src={info.question} />
         <div style={{ background: "#0000001f" }}>

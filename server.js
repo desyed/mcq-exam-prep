@@ -4,6 +4,7 @@ var cors = require("cors")
 const path = require("path")
 const fs = require("fs")
 var walk = require("walk")
+var _ = require("lodash")
 const app = express()
 
 // gatsby middleware
@@ -22,27 +23,29 @@ app.use(cors())
 app.use(express.static("public/"))
 
 app.get("/qna", (req, res) => {
-  var questions = []
-  var answers = []
+  let questions = []
+  let answers = []
 
   // Walker options
-  var walker = walk.walk("./src/images/exam", { followLinks: false })
+  let walker = walk.walk("./src/images/exam", { followLinks: false })
 
   walker.on("file", function (root, stat, next) {
     let obj = {}
     let file = root.replace(/\\/g, "/") + "/" + stat.name
     let fileName = file.replace("./src/images/exam/", "")
-    const id = stat.name.match(/[0-9]/) ? stat.name.match(/[0-9]/)[0] : null
-    const answer = stat.name.match(/a[0-9]/) ? true : false
+    const qid = stat.name.match(/[0-9]{1,9}/)
+      ? stat.name.match(/[0-9]{1,9}/)[0]
+      : null
+    const answer = stat.name.match(/a[0-9]{1,9}/) ? true : false
 
-    if (id && !answer) {
-      obj.id = +id
+    if (qid && !answer) {
+      obj.qid = +qid
       obj.question = fileName
       questions.push(obj)
     }
 
-    if (id && answer) {
-      obj.id = +id
+    if (qid && answer) {
+      obj.qid = +qid
       obj.answer = fileName
       answers.push(obj)
     }
@@ -53,10 +56,13 @@ app.get("/qna", (req, res) => {
   walker.on("end", function () {
     // console.log(files)
     questions.map(q => {
+      // q.qid = _.padStart(q.qid, 2, "0")
       answers.forEach(ans => {
-        if (q.id == ans.id) q.answer = ans.answer
+        if (q.qid == ans.qid) q.answer = ans.answer
       })
     })
+    questions = _.sortBy(questions, ["qid"])
+
     res.send(questions)
   })
 })

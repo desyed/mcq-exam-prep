@@ -1,3 +1,11 @@
+.exam_con .question_con {
+  margin: 20px 0;
+}
+
+.exam_con .question_con .question {
+  padding-top: 5px;
+}
+
 .exam_con .question_con .gatsby-image-wrapper {
   width: 100%;
   max-width: 700px;
