@@ -26,12 +26,12 @@ app.get("/qna", (req, res) => {
   var answers = []
 
   // Walker options
-  var walker = walk.walk("./static", { followLinks: false })
+  var walker = walk.walk("./src/images/exam", { followLinks: false })
 
   walker.on("file", function (root, stat, next) {
     let obj = {}
     let file = root.replace(/\\/g, "/") + "/" + stat.name
-    let fileName = file.replace("./static/", "")
+    let fileName = file.replace("./src/images/exam/", "")
     const id = stat.name.match(/[0-9]/) ? stat.name.match(/[0-9]/)[0] : null
     const answer = stat.name.match(/a[0-9]/) ? true : false
 

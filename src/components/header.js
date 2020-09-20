@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
@@ -6,7 +6,9 @@ const Header = ({ score, questions }) => (
   <div
     style={{
       display: "flex",
-      position: "absolute",
+      position: "fixed",
+      textAlign: "center",
+      fontSize: "14px",
       top: 0,
       left: 0,
       width: "100%",
@@ -19,12 +21,12 @@ const Header = ({ score, questions }) => (
     }}
   >
     <p style={{ margin: 0, flex: 1 }}>MCQ EXAM: CHECK YOURSELF</p>
-    <p style={{ margin: 0, padding: "0 5px", color: "cadetblue" }}>
+    {/* <p style={{ margin: 0, padding: "0 5px", color: "cadetblue" }}>
       QUESTIONS: {questions["current"]}/{questions["total"]}
     </p>
     <p style={{ margin: 0, padding: "0 5px", color: "#71424b" }}>
       {"SCORE: " + score["current"] + "/" + score["total"]}
-    </p>
+    </p> */}
   </div>
 )
 

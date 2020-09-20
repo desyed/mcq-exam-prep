@@ -12,17 +12,13 @@ const SecondPage = () => {
   const [questions, setQuestions] = useState([])
   useEffect(() => {
     async function fetchData() {
-      return await axios.get("http://localhost:3000/qna")
+      let res = await axios.get("http://localhost:3000/qna")
+      setQuestions(res.data)
+      // console.log(res.data)
     }
-
     fetchData()
-    // axios.get("http://localhost:3000/qna").then(res => {
-    //   if (res) {
-    //     // setQuestions(res["data"])
-    //   }
-    console.log(fetchData())
-    // })
-  })
+  }, [])
+  // console.log(questions)
   return (
     <Layout>
       <SEO title="Exam page" />
@@ -31,19 +27,11 @@ const SecondPage = () => {
         questions={{ current: 0, total: 166 }}
       />
       <div className="exam_con">
-        <Question />
-        {/* <div className="question_con">
-        <div className="title">Question: 1</div>
-        <div className="question">
-          <Image alt="question" src="1.png" />
-          <div>
-            <button>Show Answer</button>
-          </div>
-        </div>
-        <div className="answer">
-          <Image alt="answer" src="a1.png" />
-        </div>
-      </div> */}
+        {questions &&
+          questions.length &&
+          questions.map(q => {
+            return <Question info={q} />
+          })}
       </div>
     </Layout>
   )
