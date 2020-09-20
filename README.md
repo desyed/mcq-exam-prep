@@ -4,8 +4,10 @@
 
 1.  **EXTRACT IMAGES**
 
-### FOR QUESTION IMAGE NAME EXAMPLE: q1.png,q2.png etc
-### FOR ANSWER IMAGE NAME EXAMPLE: a1.png,a2.png etc
+    ```shell
+    FOR QUESTION IMAGE NAME EXAMPLE: q1.png,q2.png etc
+    FOR ANSWER IMAGE NAME EXAMPLE: a1.png,a2.png etc
+    ```
 
 2.  **Start running app.**
 
