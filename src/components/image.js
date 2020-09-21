@@ -35,7 +35,7 @@ export default ({ src }) => {
             fluid={
               data.allImageSharp.edges.find(element => {
                 // Match string after final slash
-                console.log(element.node.fluid.src.split("/").pop())
+                // console.log(element.node.fluid.src.split("/").pop())
                 return element.node.fluid.src.split("/").pop() === src
               }).node.fluid
             }

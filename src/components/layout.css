@@ -155,6 +155,9 @@ hr {
   border: none;
   height: 1px;
 }
+button {
+  cursor: pointer;
+}
 button,
 input,
 optgroup,

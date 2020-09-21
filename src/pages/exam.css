@@ -10,3 +10,17 @@
   background: rgb(213 213 255);
   padding: 0 5px;
 }
+.exam_con .title.right {
+  background: rgb(185 224 108);
+  padding: 0 5px;
+}
+.exam_con .title.wrong {
+  background: rgb(251 142 101);
+  padding: 0 5px;
+}
+.exam_con .mark {
+  background: #00000029;
+  padding: 0 5px;
+  text-transform: capitalize;
+  font-size: 15px;
+}
