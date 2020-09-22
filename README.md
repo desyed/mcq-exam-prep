@@ -2,7 +2,9 @@
 
 ### NODEJS + REACTJS
 
-1.  **EXTRACT IMAGES**
+1.  **QUESTION IMAGES & ENV**
+
+    Change apiEndpoint to 'localhost' in "config/api-endpoint.js" folder
 
     Copy/paste images in "src/images/exam" folder
 

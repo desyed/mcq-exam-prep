@@ -7,13 +7,11 @@ const Header = ({ score, total, right, wrong, filter }) => (
     style={{
       display: "flex",
       position: "fixed",
-      textAlign: "center",
       fontSize: "14px",
       top: 0,
       left: 0,
       width: "100%",
       boxShadow: "0 0 17px 0px #0000002e",
-      color: "#9a9ad8",
       paddingBbottom: 2,
       fontFamily:
         "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif",
@@ -29,7 +27,7 @@ const Header = ({ score, total, right, wrong, filter }) => (
         display: "flex",
       }}
     >
-      <p style={{ margin: 0, flex: 1 }}>MCQ EXAM: CHECK YOURSELF</p>
+      <p style={{ margin: 0, flex: 1 }}>MCQ</p>
       <p style={{ margin: 0, padding: "0 5px", color: "cadetblue" }}>
         TOTAL: {total}
       </p>

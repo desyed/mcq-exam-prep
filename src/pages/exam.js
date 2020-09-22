@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
+import ApiEndpoint from "../../config/api-endpoint"
 import _ from "lodash"
 import "./exam.css"
 
@@ -18,7 +19,7 @@ const SecondPage = () => {
 
   useEffect(() => {
     async function fetchData() {
-      let res = await axios.get("http://192.168.0.109:3000/qna")
+      let res = await axios.get(ApiEndpoint + "/qna")
       if (res) {
         setQuestions(res.data)
         setQuestions2(res.data)
@@ -55,9 +56,9 @@ const SecondPage = () => {
   }
   const setQ = (key, id) => {
     if (key === 1) {
-      setRight([...right, id])
+      if (!right.includes(id)) setRight([...right, id])
     } else {
-      setWrong([...wrong, id])
+      if (!wrong.includes(id)) setWrong([...wrong, id])
     }
   }
 
