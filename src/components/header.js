@@ -10,11 +10,9 @@ const Header = ({ score, total, right, wrong, filter }) => (
       textAlign: "center",
       fontSize: "14px",
       top: 0,
-      left: "50%",
+      left: 0,
       width: "100%",
-      maxWidth: "1200px",
-      transform: "translateX(-50%)",
-      borderBottom: "1px solid",
+      boxShadow: "0 0 17px 0px #0000002e",
       color: "#9a9ad8",
       paddingBbottom: 2,
       fontFamily:
@@ -23,30 +21,48 @@ const Header = ({ score, total, right, wrong, filter }) => (
       zIndex: 2,
     }}
   >
-    <p style={{ margin: 0, flex: 1 }}>MCQ EXAM: CHECK YOURSELF</p>
-    <p style={{ margin: 0, padding: "0 5px", color: "cadetblue" }}>
-      TOTAL: {total}
-    </p>
-    <p style={{ margin: 0, padding: "0 5px", color: "#71424b" }}>
-      SCORE:{" "}
-      <button
-        style={{ background: "rgb(185 224 108)" }}
-        onClick={() => {
-          filter(1)
-        }}
-      >
-        ✔ {right}
-      </button>{" "}
-      |{" "}
-      <button
-        style={{ background: "rgb(251 142 101)" }}
-        onClick={() => {
-          filter(1)
-        }}
-      >
-        ✖ {wrong}
-      </button>
-    </p>
+    <div
+      style={{
+        width: "100%",
+        maxWidth: "1200px",
+        margin: "0 auto",
+        display: "flex",
+      }}
+    >
+      <p style={{ margin: 0, flex: 1 }}>MCQ EXAM: CHECK YOURSELF</p>
+      <p style={{ margin: 0, padding: "0 5px", color: "cadetblue" }}>
+        TOTAL: {total}
+      </p>
+      <p style={{ margin: 0, padding: "0 5px", color: "#b9b9b9" }}>
+        SCORE:{" "}
+        <button
+          style={{ color: "rgb(145 202 33)", background: "transparent" }}
+          onClick={() => {
+            filter(1)
+          }}
+        >
+          ✔ {right}
+        </button>{" "}
+        |{" "}
+        <button
+          style={{ color: "rgb(251 142 101)", background: "transparent" }}
+          onClick={() => {
+            filter(0)
+          }}
+        >
+          ✖ {wrong}
+        </button>
+        |{" "}
+        <button
+          style={{ color: "rgb(251 142 101)", background: "transparent" }}
+          onClick={() => {
+            filter(-1)
+          }}
+        >
+          ⊶
+        </button>
+      </p>
+    </div>
   </div>
 )
 

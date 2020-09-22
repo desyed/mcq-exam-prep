@@ -7,8 +7,12 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .exam_con .title {
-  background: rgb(213 213 255);
-  padding: 0 5px;
+  /* background: rgb(185 224 108); */
+  padding: 0 10px;
+  width: 150px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
 }
 .exam_con .title.right {
   background: rgb(185 224 108);
@@ -19,8 +23,10 @@
   padding: 0 5px;
 }
 .exam_con .mark {
-  background: #00000029;
+  /* background: #00000029;  */
   padding: 0 5px;
   text-transform: capitalize;
   font-size: 15px;
+  display: inline-block;
+  margin-left: 15px;
 }

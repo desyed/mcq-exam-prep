@@ -18,7 +18,7 @@ const SecondPage = () => {
 
   useEffect(() => {
     async function fetchData() {
-      let res = await axios.get("http://localhost:3000/qna")
+      let res = await axios.get("http://192.168.0.109:3000/qna")
       if (res) {
         setQuestions(res.data)
         setQuestions2(res.data)
@@ -39,6 +39,8 @@ const SecondPage = () => {
           return x
         })
       )
+    } else if (key === -1) {
+      setQuestions(questions2)
     } else {
       setQuestions(
         _.filter(questions2, function (o) {
